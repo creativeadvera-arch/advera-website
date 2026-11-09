@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: advera-creative
+    runtime: static
+    buildCommand: echo 'Static website ready'
+    staticPublishPath: .
