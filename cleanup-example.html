@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en-AU"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="See how Advera Creative turns inconsistent fictional Excel and CSV records into a checked dataset, with exact duplicates removed and missing values flagged. Download the before-and-after example.">
+<title>Excel Cleanup Example | Advera Creative</title>
+<link rel="canonical" href="https://advera-creative.onrender.com/cleanup-example.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>
+:root{--bg:#101612;--card:#1d2922;--accent:#c5f277;--txt:#f4f5ed;--muted:#b8c9b8;--line:#526353}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}a{color:var(--accent)}a:focus-visible{outline:3px solid #c5f277;outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}header{border-bottom:1px solid var(--line);padding:22px 0}.nav{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.nav .brand{font-weight:900;color:var(--txt);text-decoration:none;letter-spacing:.09em}
+.eyebrow{color:var(--accent);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.15em}.hero{padding:65px 0 42px}.hero h1{font-size:clamp(37px,6vw,65px);line-height:1.06;letter-spacing:-.055em;margin:12px 0 20px;max-width:850px}.hero p{max-width:820px;color:var(--muted);font-size:18px}.measure{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}.measure div{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px}.measure strong{display:block;font-size:28px;color:var(--accent)}.measure span{font-size:13px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:35px 0}.panel{background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;padding:18px}.panel h2{margin:0 0 8px;font-size:24px}.panel p{color:var(--muted);font-size:14px}.scroll{overflow-x:auto}.scroll table{width:100%;border-collapse:collapse;min-width:470px;text-align:left;font-size:12px}.scroll th,.scroll td{padding:9px 8px;border-bottom:1px solid var(--line);white-space:nowrap}.scroll th{text-transform:uppercase;font-size:10px;letter-spacing:.06em;color:var(--accent)}.bad{color:#ffd4ae}.warn{font-weight:700;color:#ffd4ae}.pill{display:inline-block;padding:3px 8px;border-radius:20px;border:1px solid var(--line);font-size:11px;color:var(--muted)}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.button{padding:11px 18px;display:inline-block;border-radius:6px;background:var(--accent);color:#101612;text-decoration:none;font-weight:850;min-height:44px}.button.secondary{background:transparent;color:var(--accent);border:1px solid var(--accent)}.button:hover{filter:brightness(1.09)}.notes{padding:16px 0 50px}.notes h2{font-size:30px;letter-spacing:-.035em}.notes li{margin:9px 0;color:#dbe3d8}.small{color:var(--muted);font-size:13px;max-width:900px}.cta{background:var(--card);padding:32px;border-radius:10px;margin-bottom:55px;border:1px solid var(--accent)}.cta h2{font-size:30px;margin:3px 0}.cta p{color:var(--muted)}footer{border-top:1px solid var(--line);padding:22px 0;font-size:13px;color:var(--muted)}
+@media(max-width:750px){.grid{grid-template-columns:1fr}.measure{grid-template-columns:1fr 1fr 1fr}.measure div{padding:12px}.measure strong{font-size:23px}.hero{padding-top:40px}}
+</style></head><body>
+<header><div class="wrap nav"><a href="/" class="brand">ADVERA CREATIVE</a><span><a href="/quick-fixes.html">Quick fixes</a> · <a href="/">Home</a></span></div></header>
+<main><section class="wrap hero">
+<div class="eyebrow">Original demonstration · No real customer data</div>
+<h1>Messy spreadsheet in. <span style="color:var(--accent)">Checked data out.</span></h1>
+<p>Below is a small, fictional work-order dataset showing what our A$49 Excel/CSV cleanup service can deliver. See the input, review the output, and download both files to inspect the changes. This is a self-initiated example, <strong>not a paid client case study.</strong></p>
+<div class="measure"><div><strong>12</strong><span>Source records</span></div><div><strong>2</strong><span>Exact duplicates removed</span></div><div><strong>1</strong><span>Missing status flagged</span></div></div>
+</section>
+<section class="wrap grid">
+<article class="panel"><span class="eyebrow">Before · raw_orders.csv</span><h2>Inconsistent input</h2><p>Mixed date formats, inconsistent status text, trailing spaces and duplicate work-order IDs.</p>
+<div class="scroll"><table><thead><tr><th>Order</th><th>Client</th><th>Due</th><th>Status</th></tr></thead><tbody>
+<tr><td>WO-101</td><td>Northline Joinery</td><td class="bad">2026/11/01</td><td>In Progress</td></tr>
+<tr><td>WO-102</td><td>Harbour Metal</td><td class="bad">03-11-2026</td><td>Completed</td></tr>
+<tr><td>WO-103</td><td class="bad"> Western Fabrication </td><td>2026-11-05</td><td>New</td></tr>
+<tr><td class="bad">WO-101 (duplicate)</td><td>Northline Joinery</td><td class="bad">2026/11/01</td><td>In Progress</td></tr>
+<tr><td>WO-104</td><td>Acme Shelving</td><td class="bad">07 Nov 2026</td><td class="bad">IN PROGRESS</td></tr>
+<tr><td>WO-105</td><td>Urban Steel</td><td>2026-11-10</td><td class="bad">(blank)</td></tr>
+</tbody></table></div><div class="actions"><a href="/samples/raw_orders.csv" class="button secondary" download>Download raw CSV</a></div></article>
+<article class="panel"><span class="eyebrow">After · cleaned_orders.csv</span><h2>Consistent, auditable output</h2><p>Approved exact-key duplicates removed, ISO date formats, standardised labels and one clear review flag.</p>
+<div class="scroll"><table><thead><tr><th>Order</th><th>Client</th><th>Due</th><th>Status / QA</th></tr></thead><tbody>
+<tr><td>WO-101</td><td>Northline Joinery</td><td>2026-11-01</td><td>In Progress</td></tr>
+<tr><td>WO-102</td><td>Harbour Metal</td><td>2026-11-03</td><td>Completed</td></tr>
+<tr><td>WO-103</td><td>Western Fabrication</td><td>2026-11-05</td><td>New</td></tr>
+<tr><td>WO-104</td><td>Acme Shelving</td><td>2026-11-07</td><td>In Progress</td></tr>
+<tr><td>WO-105</td><td>Urban Steel</td><td>2026-11-10</td><td><span class="warn">Missing status — review</span></td></tr>
+<tr><td>WO-106</td><td>Harbour Metal</td><td>2026-11-12</td><td>Completed</td></tr>
+</tbody></table></div><div class="actions"><a href="/samples/cleaned_orders.csv" class="button" download>Download cleaned CSV</a></div></article>
+</section>
+<section class="wrap notes"><h2>Every change has a reason.</h2><ol>
+<li><strong>Exact duplicates:</strong> removed repeated WO-101 and WO-104 only after confirming matching source records. No fuzzy merges or guessed identities.</li>
+<li><strong>Date formats:</strong> normalised to ISO YYYY-MM-DD, using a stated Australian day-month-year rule for the ambiguous input 03-11-2026. On client work, the owner approves any ambiguous interpretation.</li>
+<li><strong>Labels and whitespace:</strong> standardised status variations and trimmed one extra-spaced client field.</li>
+<li><strong>Missing value:</strong> left WO-105's status empty and added a review flag instead of inventing a value.</li></ol>
+<p class="small">All work orders and company names here are fictional; the sample contains no real customer information. Actual projects require agreed duplicate keys, file dimensions, permissions, delivery criteria and payment terms before production. No hidden customer results or performance guarantees.</p>
+<div class="actions"><a class="button secondary" href="/samples/README.txt" target="_blank" rel="noopener">Read the detailed change log</a></div></section>
+<section class="wrap cta"><div class="eyebrow">One small paid task</div><h2>Want your spreadsheet tidied?</h2><p>A$49 indicative · up to 300 structured rows and 6 columns · one approved exact-duplicate rule · edited file + change summary + one small correction.</p>
+<a class="button" href="mailto:creativeadvera@gmail.com?subject=Advera%20A%2449%20Spreadsheet%20Cleanup%20Enquiry&body=Business%20name%3A%0AApprox.%20rows%20and%20columns%3A%0AWhat%20defines%20a%20duplicate%3A%0ARequested%20formatting%20rules%3A%0AAre%20the%20records%20confidential%3A%0A%0APlease%20do%20not%20attach%20sensitive%20source%20files%20yet.">Request a scoped quote</a></section></main>
+<footer><div class="wrap">© 2026 Advera Creative · Perth, Western Australia · <a href="/privacy.html">Privacy</a> · <a href="/quick-fixes.html">Services</a></div></footer>
+</body></html>
