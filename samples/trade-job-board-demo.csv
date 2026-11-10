@@ -1,0 +1,9 @@
+Job reference,Project type,Due date,Production stage,Material status,Dispatch status,Next action,Notes
+DEMO-101,Wall frames,2026-11-13,Complete,Available,Ready,Confirm truck slot,Fictional demonstration record
+DEMO-102,Roof trusses,2026-11-16,Assembly,Available,Not ready,Finish assembly,Fictional demonstration record
+DEMO-103,Hardware pack,2026-11-17,Printing,Awaiting supply,Not ready,Check hardware arrival,Fictional demonstration record
+DEMO-104,Steel components,2026-11-18,Scheduled,Available,Not ready,Confirm fabrication,Fictional demonstration record
+DEMO-105,Frame repairs,2026-11-19,Ready for QA,Available,Not ready,Quality review,Fictional demonstration record
+DEMO-106,Window support,2026-11-19,Complete,Available,Dispatched,Archive job,Fictional demonstration record
+DEMO-107,Roof trusses,2026-11-20,Awaiting drawings,Unknown,Not ready,Request approved plans,Fictional demonstration record
+DEMO-108,Wall frames,2026-11-23,Assembly,Available,Not ready,Review build status,Fictional demonstration record
