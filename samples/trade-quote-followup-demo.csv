@@ -1,0 +1,7 @@
+Quote reference,Customer alias,Enquiry date,Scope,Status,Illustrative quote AUD,Next follow-up,Next action,Notes
+DEMO-Q01,Demo Client A,2026-11-03,Small repair,Sent,850,2026-11-12,Check receipt,Fictional example not a real customer
+DEMO-Q02,Demo Client B,2026-11-04,Frame supply,Clarify scope,,2026-11-13,Request approved dimensions,Fictional example not a real customer
+DEMO-Q03,Demo Client C,2026-11-05,Site materials,Sent,2400,2026-11-14,Confirm decision,Fictional example not a real customer
+DEMO-Q04,Demo Client D,2026-11-06,Dispatch support,Won,500,,Confirm paperwork,Fictional example not a real customer
+DEMO-Q05,Demo Client E,2026-11-07,Roof works,No response,1900,2026-11-17,Check once,Fictional example not a real customer
+DEMO-Q06,Demo Client F,2026-11-09,Hardware supply,Declined,300,,Close record,Fictional example not a real customer
