@@ -1,0 +1,41 @@
+(function(){
+ "use strict";
+ const $=function(id){return document.getElementById(id);};
+ let data=null,visible=[];
+ const clock=function(){return Date.now();};
+ const dateFormat=new Intl.DateTimeFormat("en-AU",{timeZone:"Australia/Perth",day:"numeric",month:"short",year:"numeric"});
+ const timeFormat=new Intl.DateTimeFormat("en-AU",{timeZone:"Australia/Perth",hour:"numeric",minute:"2-digit",hour12:true});
+ function el(tag,text,className){const node=document.createElement(tag);if(text!==undefined)node.textContent=text;if(className)node.className=className;return node;}
+ function safeLink(url,label){const a=el("a",label);try{const parsed=new URL(url);if(parsed.protocol!=="https:")throw new Error();a.href=parsed.href;a.target="_blank";a.rel="noopener noreferrer";}catch(e){a.textContent="Source link unavailable";}return a;}
+ function save(text,name,mime){const blob=new Blob([text],{type:mime});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(url);},1000);}
+ function row(dl,label,value){const div=el("div");div.append(el("dt",label),el("dd",value));dl.append(div);}
+ function card(r,now){const article=el("article",undefined,"card");const head=el("div",undefined,"card-head");const fresh=TradeBrief.freshness(r,now,data.freshForHours);head.append(el("span",fresh==="checked"?"Source checked":"Recheck source",fresh==="checked"?"pill":"pill warn"),el("span",r.reference,"ref"));article.append(head,el("h3",r.title),el("p",r.issuer,"issuer"));const dl=el("dl");row(dl,"Trade",r.trade);row(dl,"Location",r.location);row(dl,"Closes",dateFormat.format(new Date(r.closesAt)));row(dl,"Time",timeFormat.format(new Date(r.closesAt))+" AWST");row(dl,"Value","Not stated");row(dl,"Notice",r.noticeType);article.append(dl,el("p",r.summary,"summary"));
+ const fit=el("div",undefined,"fit");fit.append(el("strong","Our initial assessment"),el("p",r.inference));article.append(fit);
+ const detail=el("details");detail.append(el("summary","What to verify before a bid"));detail.append(el("p",r.documentReview));const next=el("p");next.append(el("strong","Next step: "),document.createTextNode(r.nextStep));detail.append(next,el("p","Source checked "+dateFormat.format(new Date(r.checkedAt))+". Buyer eligibility is not confirmed."));article.append(detail);
+ const bottom=el("div",undefined,"card-bottom");bottom.append(safeLink(r.sourceUrl,"Official notice →"));const calendar=el("button","Add deadline","calendar");calendar.type="button";calendar.addEventListener("click",function(){save(TradeBrief.toICS(r,clock()),r.id+".ics","text/calendar;charset=utf-8");});bottom.append(calendar);article.append(bottom);const request=el("button","Ask about this notice →","notice-enquiry");request.type="button";request.setAttribute("aria-label","Ask about "+r.reference);request.addEventListener("click",function(){selectNotice(r);});article.append(request);return article;}
+
+ function selectNotice(r){
+  if(!$('brief-trade').value.trim())$('brief-trade').value=r.trade;
+  if(!$('brief-area').value.trim())$('brief-area').value=r.region==='Perth metro'?'Rockingham / Perth metro':r.location;
+  const notes=$('brief-notes'),previous=notes.value.trim();
+  const line='Notice of interest: '+r.reference+' - '+r.title;
+  if(!previous.includes(r.reference)){
+   const joined=previous?previous+'\n'+line:line;
+   if(joined.length<=notes.maxLength){notes.value=joined;$('selection-status').textContent='Added '+r.reference+' to your enquiry. Check the trade, area and preparation time below. Nothing has been sent.';}
+   else $('selection-status').textContent='Your existing notes were kept. Mention '+r.reference+' when you send your enquiry; there is not enough space to add it here.';
+  }else $('selection-status').textContent=r.reference+' is already in your enquiry. Your existing details were kept. Nothing has been sent.';
+  $('brief').scrollIntoView({block:'start'});$('brief-trade').focus({preventScroll:true});
+ }
+ function options(){return {trade:$("trade").value,region:$("region").value,runway:Number($("runway").value),search:$("search").value};}
+ function render(){if(!data)return;const now=clock();visible=TradeBrief.filter(data.records,options(),now);const cards=$("cards");cards.replaceChildren();visible.forEach(function(r){cards.append(card(r,now));});if(!visible.length)cards.append(el("div","No notices match those filters. Try another trade, a wider area or less preparation time. We don't invent matches.","empty"));$("result-summary").textContent=visible.length+" of "+data.records.length+" sample notices match · closing soonest first";$("export").disabled=!visible.length;
+ const anyStale=data.records.some(function(r){return TradeBrief.freshness(r,now,data.freshForHours)!=="checked";});const status=$("freshness");status.className=anyStale?"notice warn":"notice";status.textContent=anyStale?"This sample needs a fresh source check. Some records are older than 48 hours; verify dates and amendments on the official portal. Closed records are hidden.":"Dated sample: public notices and published deadlines checked. Full tender packs and your business eligibility have not been verified. Official source documents always take priority.";
+ $("notice-count").textContent=TradeBrief.filter(data.records,{runway:0},now).length;
+ }
+ $("filters").addEventListener("submit",function(e){e.preventDefault();});["trade","region","runway"].forEach(function(id){$(id).addEventListener("change",render);});$("search").addEventListener("input",render);$("reset").addEventListener("click",function(){$("filters").reset();render();});$("export").addEventListener("click",function(){if(data&&visible.length)save(TradeBrief.toCSV(visible,clock(),data.freshForHours),"tradebrief-wa-shortlist.csv","text/csv;charset=utf-8");});
+ function fields(){return {trade:$("brief-trade").value,area:$("brief-area").value,runway:$("brief-runway").value,notes:$("brief-notes").value};}
+ function prepare(){const form=$("brief-form");if(!form.reportValidity())return null;const body=TradeBrief.enquiry(fields());$("email-fallback").hidden=false;$("enquiry-preview").value=body;return body;}
+ $("brief-form").addEventListener("submit",function(e){e.preventDefault();const body=prepare();if(body===null)return;$("enquiry-status").textContent="Your email app should open. Review and send it there, or copy the enquiry below. No order has been placed.";window.location.href="mailto:creativeadvera@gmail.com?subject="+encodeURIComponent("TradeBrief WA — paid brief enquiry")+"&body="+encodeURIComponent(body);});
+ $("copy-enquiry").addEventListener("click",async function(){const body=prepare();if(body===null)return;try{await navigator.clipboard.writeText(body);$("enquiry-status").textContent="Copied. Paste into an email to creativeadvera@gmail.com. Nothing has been sent.";}catch(e){$("enquiry-preview").focus();$("enquiry-preview").select();$("enquiry-status").textContent="Select and copy the enquiry below, then email creativeadvera@gmail.com. Nothing has been sent.";}});
+ fetch("opportunities.json",{cache:"no-store"}).then(function(r){if(!r.ok)throw new Error("Source data unavailable");return r.json();}).then(function(value){if(!Array.isArray(value.records)||!value.records.every(function(r){return r.id&&r.title&&r.sourceUrl&&Number.isFinite(Date.parse(r.closesAt));}))throw new Error("Invalid source data");data=value;$("checked-at").textContent="Source snapshot: "+dateFormat.format(new Date(data.checkedAt))+" · Perth time";render();}).catch(function(){$("cards").replaceChildren(el("div","The sample could not load. Please use the official council notices or email us for a source check.","empty"));$("result-summary").textContent="Sample unavailable";$("freshness").className="notice error";$("freshness").textContent="We couldn't load the source data. No opportunity count or deadline is being inferred.";$("checked-at").textContent="Source-check date unavailable";});
+ setInterval(render,60000);
+})();
