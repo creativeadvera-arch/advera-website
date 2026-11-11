@@ -1,0 +1,7 @@
+Source row,Record ID,Issue,Action,Reason
+3,A100,Exact duplicate,Exclude second matching record,Keep first and preserve original
+4,A101,Leading and trailing spaces,Trim spaces,No product fact changed
+4,A101,Date format,Normalise to DD/MM/YYYY,Australian date assumption shown
+5,A102,Date format,Normalise to DD/MM/YYYY,Source date unambiguous
+6,A103,Missing date,Leave blank and flag,No information invented
+7,A104,Unknown amount,Leave numeric amount blank and flag,Do not fabricate number
