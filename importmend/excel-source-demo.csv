@@ -1,0 +1,7 @@
+Record ID,Item description,Date,Net amount (AUD),Tax rate,Review note
+A100,Widget Pack,2026-11-01,100,0.10,
+A100,Widget Pack,2026-11-01,100,0.10,Exact duplicate
+A101, Tool Kit ,02/11/2026,40,0.10,Whitespace and date style
+A102,Cable Roll,2026/11/03,60,0.10,Date style
+A103,Safety Gloves,,12,0.10,Missing date
+A104,Check Me,2026-11-04,?,0.10,Unknown amount
