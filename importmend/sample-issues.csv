@@ -1,0 +1,7 @@
+severity,row,column,code,explanation,suggested_action
+BLOCKER,2,Price,INVALID_MONEY,Expected non-negative number without currency symbols.,Confirm numeric amount from source.
+BLOCKER,2,Option1 name,DANGEROUS_VARIANT_UPDATE,Variant-related update without option fields can remove existing variants.,Add exact existing option name and value columns.
+REVIEW,2,Vendor,DESTRUCTIVE_BLANK_RISK,Blank Vendor can overwrite existing store data if overwrite is enabled.,Compare against current store export before importing.
+BLOCKER,3,Status,INVALID_STATUS,"Status must be active, draft or archived.",Confirm correct status.
+BLOCKER,3,Option1 name,DANGEROUS_VARIANT_UPDATE,Variant-related update without option fields can remove existing variants.,Add exact existing option name and value columns.
+BLOCKER,3,Title,FIRST_PRODUCT_TITLE_MISSING,The first row for this handle has no title.,Fill title on first product row.
