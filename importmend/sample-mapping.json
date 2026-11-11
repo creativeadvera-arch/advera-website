@@ -1,0 +1,14 @@
+{
+  "source_headers": {
+    "product_slug": "URL handle",
+    "product_name": "Title",
+    "brand": "Vendor",
+    "variant_code": "SKU",
+    "unit_price": "Price",
+    "size_label": "Option1 name",
+    "size_value": "Option1 value",
+    "picture_url": "Product image URL",
+    "shopify_status": "Status"
+  },
+  "drop_columns": []
+}
