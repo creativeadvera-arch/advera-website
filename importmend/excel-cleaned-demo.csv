@@ -1,0 +1,6 @@
+Record ID,Item description,Date,Net amount (AUD),Tax rate,Review flag
+A100,Widget Pack,01/11/2026,100,0.10,PASS
+A101,Tool Kit,02/11/2026,40,0.10,PASS
+A102,Cable Roll,03/11/2026,60,0.10,PASS
+A103,Safety Gloves,,12,0.10,REVIEW missing date
+A104,Check Me,04/11/2026,,0.10,REVIEW unknown amount
