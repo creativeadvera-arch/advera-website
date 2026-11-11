@@ -1,0 +1,4 @@
+URL handle,Title,Vendor,SKU,Price,Option1 name,Option1 value,Product image URL,Status
+linen-tee,Linen Tee,Harbour Goods,TEE-S,29.95,Size,S,https://example.com/images/tee-s.jpg,draft
+linen-tee,,Harbour Goods,TEE-M,29.95,Size,M,https://example.com/images/tee-m.jpg,draft
+coastal-mug,Coastal Mug,Harbour Goods,MUG-01,19.00,Style,Standard,https://example.com/images/mug.jpg,draft
