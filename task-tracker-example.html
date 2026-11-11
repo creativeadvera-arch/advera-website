@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#111713">
+<title>Fictional Excel Job Tracker Example | Advera Creative</title>
+<meta name="description" content="See an original fictional Excel job-tracker example with dropdowns, due-date alerts and formula-driven progress counts. No client data or performance claims.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://advera-creative.onrender.com/task-tracker-example.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Job & Task Tracker Example — Advera Creative">
+<meta property="og:description" content="An original self-initiated spreadsheet demo, with visible mock task data and a simple workflow breakdown.">
+<meta property="og:url" content="https://advera-creative.onrender.com/task-tracker-example.html">
+<style>
+:root{--bg:#111713;--fg:#f4f7f2;--muted:#b9cabb;--acid:#c5f277;--line:#43574a;--panel:#1d3025;--light:#e9f2e5;--dark:#142a1f}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:var(--acid)}a:focus-visible{outline:3px solid white;outline-offset:4px}.wrap{max-width:1080px;margin:auto;padding:0 24px}
+nav{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding:20px 0;border-bottom:1px solid var(--line)}.brand{font-weight:900;color:var(--fg);letter-spacing:.08em;text-decoration:none}
+.links{display:flex;gap:15px;flex-wrap:wrap;font-size:14px}
+.hero{padding:68px 0 28px}.kicker{color:var(--acid);font-size:12px;letter-spacing:.15em;text-transform:uppercase;font-weight:800}
+h1{font-size:clamp(36px,6vw,65px);line-height:1.09;letter-spacing:-.05em;max-width:900px;margin:12px 0 23px}h1 em{font-style:normal;color:var(--acid)}h2{font-size:clamp(26px,3.4vw,35px);letter-spacing:-.03em;line-height:1.25}h3{margin:0 0 8px;font-size:19px}
+.lead{max-width:790px;color:var(--muted);font-size:19px}.note{font-size:13px;color:var(--muted)}
+.btn{display:inline-block;background:var(--acid);color:#142315;text-decoration:none;font-weight:800;border-radius:6px;padding:13px 18px}.btn.secondary{border:1px solid #7c9881;color:var(--fg);background:transparent}.actions{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0}
+.snapshot{background:var(--panel);border:1px solid #54735d;border-radius:12px;padding:22px 24px;margin:16px 0 30px}
+.snapshot-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}.snapshot h2{font-size:21px;margin:0}.tag{font-size:11px;letter-spacing:.09em;color:var(--acid);border:1px solid #7aa36f;padding:4px 9px;border-radius:999px}
+.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:24px 0}
+.metric{background:#142820;padding:17px;border-radius:7px;border:1px solid #3a5545}.metric b{font-size:33px;display:block;color:var(--acid);line-height:1.1}.metric span{color:#c8d8c7;font-size:13px}
+.table-wrap{overflow-x:auto;border:1px solid #465b49;border-radius:7px}table{border-collapse:collapse;width:100%;min-width:660px;font-size:13px}th{text-align:left;padding:13px 12px;background:#c5f277;color:#132515}td{padding:12px;border-bottom:1px solid #385142;color:#edf4ea}tr:last-child td{border-bottom:0}tr:nth-child(odd) td{background:#253b2c}
+.pill{border-radius:999px;padding:4px 7px;font-size:11px;font-weight:700;background:#e2edcf;color:#204029;white-space:nowrap}.pill.warn{background:#ffde9c;color:#694d19}.pill.alert{background:#ffd0d0;color:#852525}
+section{padding:17px 0 23px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.card{background:var(--panel);border:1px solid var(--line);padding:22px;border-radius:9px}.card p{color:var(--muted);margin:0}
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:25px}.twocol ul{padding-left:20px}.twocol li{margin-bottom:10px}
+.cta{background:#22382a;border:1px solid #6d8d69;padding:27px;border-radius:11px;margin:26px 0 60px}.cta p{color:#d6e6d2}
+footer{padding:20px 0 35px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+@media(max-width:720px){.metrics,.grid,.twocol{grid-template-columns:1fr 1fr}.hero{padding-top:48px}.lead{font-size:17px}}
+@media(max-width:540px){.grid,.twocol{grid-template-columns:1fr}.metrics{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav aria-label="Main navigation"><a href="/" class="brand">ADVERA CREATIVE</a><div class="links"><a href="/trade-sheets.html">Trade spreadsheets</a><a href="/quick-fixes.html">Small fixes</a><a href="/agency-overflow.html">Agency support</a></div></nav>
+<main>
+<section class="hero">
+<div class="kicker">Original demonstration • No real customer data</div>
+<h1>See what a <em>clearer daily job tracker</em> could look like.</h1>
+<p class="lead">This is a static preview of a small Excel workbook Advera built from scratch using entirely fictional workshop tasks. The editable demonstration has a task log, a formula-driven overview and a short guide—without macros, paid plugins or connections to live business systems.</p>
+<div class="actions"><a href="#preview" class="btn">Inspect the sample</a><a href="mailto:creativeadvera@gmail.com?subject=Job%20tracker%20paid%20scope%20check%20%7C%20Advera%20Creative&amp;body=Business%20type%3A%0AExisting%20system%20or%20file%3A%0AApproximate%20jobs%20and%20required%20columns%3A%0AWho%20will%20update%20each%20status%3A%0AWhat%20needs%20tracking%3A%0ARequested%20delivery%20window%3A%0A%0APlease%20do%20not%20attach%20confidential%20client%20or%20employee%20data%20yet." class="btn secondary">Ask about a paid tracker</a></div>
+<p class="note">Snapshot below: 11 November 2026. These are invented tasks; numbers are from the example workbook at that date, not from a real customer.</p>
+</section>
+<section id="preview" aria-labelledby="preview-head"><div class="snapshot">
+<div class="snapshot-head"><h2 id="preview-head">Fictional task-control overview</h2><span class="tag">DEMO · 11 NOV 2026</span></div>
+<div class="metrics"><div class="metric"><b>12</b><span>Total mock tasks</span></div><div class="metric"><b>4</b><span>Completed</span></div><div class="metric"><b>8</b><span>Open</span></div><div class="metric"><b>2</b><span>Overdue and not done</span></div></div>
+<div class="table-wrap"><table><thead><tr><th>Job reference</th><th>Work item</th><th>Team</th><th>Priority</th><th>Status</th><th>Due</th><th>Review</th></tr></thead><tbody>
+<tr><td>DEMO-002</td><td>Check final cover sheet</td><td>Pre-production</td><td>High</td><td>In progress</td><td>12 Nov</td><td><span class="pill warn">Due soon</span></td></tr>
+<tr><td>DEMO-003</td><td>Print workshop plans</td><td>Printing</td><td>Medium</td><td>Not started</td><td>13 Nov</td><td><span class="pill warn">Due soon</span></td></tr>
+<tr><td>DEMO-004</td><td>Confirm hardware availability</td><td>Hardware</td><td>High</td><td>Blocked</td><td>10 Nov</td><td><span class="pill alert">Overdue</span></td></tr>
+<tr><td>DEMO-005</td><td>Prepare pick-and-pack list</td><td>Dispatch</td><td>Medium</td><td>In progress</td><td>14 Nov</td><td><span class="pill warn">Due soon</span></td></tr>
+<tr><td>DEMO-006</td><td>Variation review</td><td>Estimating</td><td>High</td><td>Not started</td><td>10 Nov</td><td><span class="pill alert">Overdue</span></td></tr>
+<tr><td>DEMO-010</td><td>Update dispatch handover</td><td>Dispatch</td><td>Low</td><td>Done</td><td>10 Nov</td><td><span class="pill">Complete</span></td></tr>
+</tbody></table></div>
+<p class="note" style="margin-top:15px">Six selected rows from the original 12-row fictional workbook. It is an example snapshot, not a live tracker, client case study or operational performance report.</p>
+</div></section>
+<section aria-labelledby="features-head"><h2 id="features-head">What this workbook demonstrates</h2><div class="grid">
+<div class="card"><h3>Consistent status inputs</h3><p>Drop-down choices for priority and status reduce conflicting terminology and help staff enter updates consistently.</p></div>
+<div class="card"><h3>Formula-driven overview</h3><p>Counts for completed, open and overdue items are calculated from task rows instead of retyped into an executive summary.</p></div>
+<div class="card"><h3>Clear warning flags</h3><p>Due-soon and overdue fields change according to due dates and completion status. The original source remains editable.</p></div>
+</div></section>
+<section><div class="twocol"><div><h2>What is not included</h2><ul><li>No automatic emails, stock feeds, ERP or accounting integration</li><li>No native macro buttons or unattended archive/reset process</li><li>No claim that the mock workbook was deployed for a real company</li></ul></div>
+<div><h2>How a client project starts</h2><ul><li>Review your existing file or requirements without sharing confidential data in the first email</li><li>Agree the exact fields, statuses, permitted data and file formats</li><li>Confirm the fixed scope, fee, review limit, delivery date and payment arrangements before production</li></ul></div></div></section>
+<section aria-labelledby="ready-head" class="cta"><h2 id="ready-head">Need something like this for your business?</h2>
+<p>Our indicative <a href="/trade-sheets.html">A$199 Job &amp; Dispatch Board</a> is a separate, smaller two-tab package. This three-tab demonstration shows design and spreadsheet capability, not the exact deliverables of that package. Existing small files can also be tidied from A$89 after review.</p>
+<a class="btn" href="mailto:creativeadvera@gmail.com?subject=Job%20tracker%20quote%20enquiry">Request a conditional quote</a>
+<p class="note" style="margin-top:14px">A private editable copy of the fictional sample can be shared for relevant legitimate opportunities. No booking or checkout is completed here; pricing is indicative in AUD and GST applies only where legally required.</p>
+</section>
+</main>
+<footer>© 2026 Advera Creative · Perth, Australia · <a href="/trade-sheets.html">Trade sheet services</a> · <a href="/privacy.html">Privacy</a></footer>
+</div>
+</body></html>
