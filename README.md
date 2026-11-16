@@ -4,6 +4,17 @@ Official public website: https://advera-creative.onrender.com/
 
 Source: a simple static HTML/CSS site with no build dependencies. Public design examples are explicitly speculative; don't claim past client results.
 
+
+## Digital Excel templates
+
+Advera Creative also sells three one-time, manually editable Excel downloads for freelancers, creators, and small service businesses. They are **templates, not SaaS apps**:
+
+- [Freelancer Profit & Pricing Studio — A$19](https://znhn0w-z4.myshopify.com/products/freelancer-profit-pricing-studio-excel-template)
+- [Creator Content Production OS — A$24](https://znhn0w-z4.myshopify.com/products/creator-content-production-os-excel-template)
+- [Client Onboarding & Delivery Hub — A$29](https://znhn0w-z4.myshopify.com/products/client-onboarding-delivery-hub-excel-template)
+
+[Browse all Excel templates](https://znhn0w-z4.myshopify.com/collections/digital-tools-templates) or [view free actual workbook previews](https://znhn0w-z4.myshopify.com/pages/free-workbook-previews).
+
 ## Publishing
 
 Render service: https://dashboard.render.com/static/srv-dbomr65g1s2s73fn0cp0
