@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free Freelance Quote & Project Profit Calculator | Advera Creative</title>
+<meta name="description" content="Calculate a minimum freelance project quote, platform fees and estimated profit after your own working time. Free calculator, no signup, data stays in your browser.">
+<link rel="canonical" href="https://advera-creative.onrender.com/freelance-profit-calculator.html">
+<meta property="og:type" content="website"><meta property="og:title" content="Free Freelance Pricing & Profit Calculator"><meta property="og:description" content="See if your freelance quote actually covers your time, direct costs, platform fees and profit goal. No signup.">
+<meta property="og:url" content="https://advera-creative.onrender.com/freelance-profit-calculator.html">
+<style>
+:root{color-scheme:dark;--bg:#0b1320;--panel:#152237;--line:#314159;--ink:#f2f6fb;--muted:#b6c6d6;--aqua:#8fe3cd;--blue:#89b8ff}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 25% -20%,#203657,transparent 60%),var(--bg);font:16px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink)}
+a{color:var(--aqua);text-underline-offset:3px}a:focus-visible,input:focus-visible,button:focus-visible{outline:3px solid var(--aqua);outline-offset:3px}
+.wrap{width:min(1080px,calc(100% - 32px));margin:auto}header{padding:24px 0;display:flex;justify-content:space-between;align-items:center;gap:16px;border-bottom:1px solid var(--line)}
+.logo{font-size:17px;font-weight:800;letter-spacing:.02em;text-decoration:none;color:var(--ink)}.back{font-size:14px;color:var(--muted)}
+h1{font-size:clamp(32px,5vw,55px);line-height:1.07;letter-spacing:-.045em;max-width:850px;margin:0 0 18px}h2{font-size:24px;letter-spacing:-.025em;margin:0}
+.hero{padding:60px 0 30px}.eyebrow{font-size:12px;font-weight:750;letter-spacing:.13em;text-transform:uppercase;color:var(--aqua);margin:0 0 17px}
+.lead{font-size:18px;max-width:720px;color:var(--muted);margin:0}.pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}.pill{font-size:12px;font-weight:600;padding:6px 11px;background:#20334a;border:1px solid #36536d;border-radius:999px}
+.main{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:20px 0 48px;align-items:start}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:26px;box-shadow:0 18px 45px #0002}
+.sub{font-size:14px;color:var(--muted);margin:6px 0 22px}.fields{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+label{display:block;font-size:13px;font-weight:650;margin-bottom:7px;color:#dbe4ed}
+input{width:100%;border:1px solid #5a7190;border-radius:10px;background:#0d192a;color:var(--ink);font:inherit;font-weight:650;padding:11px 12px;font-variant-numeric:tabular-nums;min-height:46px}
+.help{font-size:12px;color:var(--muted);margin:5px 0 0}
+.results{display:grid;grid-template-columns:1fr 1fr;gap:12px}.metric{background:#0d1d2f;border:1px solid #334b60;padding:18px;border-radius:13px}.metric strong{display:block;font-size:clamp(20px,3vw,31px);letter-spacing:-.03em;font-variant-numeric:tabular-nums}.metric span{display:block;font-size:12px;color:var(--muted)}
+.primaryMetric{grid-column:1/-1;background:#163a39;border-color:#3b6b65}.primaryMetric strong{font-size:clamp(28px,4vw,42px);color:#b2ffe6}
+.explain{font-size:14px;color:var(--muted);margin:16px 0 0}.status{font-weight:700;padding:12px;border-radius:11px;margin:14px 0 0;font-size:14px;background:#23364c}.status.good{color:#c5fce5;background:#1c4038}.status.bad{color:#ffd2cc;background:#502c32}
+.cta{margin:20px 0 0;padding:22px;border-radius:14px;background:#253553;border:1px solid #45607a}.cta h3{margin:0 0 6px;font-size:18px}.cta p{font-size:14px;color:#cdd9e6;margin:0 0 14px}
+.action{display:inline-block;padding:11px 16px;border-radius:10px;background:var(--aqua);color:#08211f;font-weight:800;text-decoration:none}.reset{background:transparent;color:var(--aqua);border:1px solid #508e82;padding:9px 15px;border-radius:10px;cursor:pointer;margin-top:18px;font:inherit;font-size:13px}
+.reading{padding:10px 0 65px;border-top:1px solid var(--line);color:var(--muted)}.reading h2{color:var(--ink);font-size:22px;margin:25px 0 10px}.reading p{max-width:760px}.reading a{font-weight:700}footer{border-top:1px solid var(--line);padding:25px 0 40px;font-size:13px;color:var(--muted)}
+@media(max-width:760px){.main{grid-template-columns:1fr}.hero{padding:38px 0 18px}.panel{padding:21px}.fields{gap:12px}}
+@media(max-width:420px){.fields{grid-template-columns:1fr}.results{grid-template-columns:1fr 1fr}.metric{padding:13px}.metric strong{font-size:21px}.back{font-size:12px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><a class="logo" href="/">ADVERA CREATIVE</a><a class="back" href="https://znhn0w-z4.myshopify.com/collections/digital-tools-templates?utm_source=advera_calculator&utm_medium=referral&utm_campaign=freelance_quote_free_tool">Browse Excel templates</a></header>
+<main>
+<section class="hero"><p class="eyebrow">Free tool · no signup</p><h1>Does your freelance quote actually make money?</h1><p class="lead">Enter your project hours, target hourly earnings and expenses. Get an indicative minimum quote and see what you'd retain after platform fees, direct costs and a value for your own time.</p><div class="pills"><span class="pill">No login</span><span class="pill">No uploads</span><span class="pill">Runs in your browser</span><span class="pill">AUD example — any currency works</span></div></section>
+<div class="main">
+<section class="panel" aria-labelledby="entry-title">
+<h2 id="entry-title">Your project numbers</h2><p class="sub">Start with the example values and replace them with your own. All inputs are editable.</p>
+<div class="fields">
+<div><label for="hours">Hours you'll spend</label><input id="hours" type="number" min="0" max="100000" step="0.5" inputmode="decimal" value="8"><p class="help">Include delivery and revision time</p></div>
+<div><label for="rate">Value of your time ($/hour)</label><input id="rate" type="number" min="0" max="10000000" step="1" inputmode="decimal" value="50"><p class="help">Your own planning rate</p></div>
+<div><label for="cost">Direct expenses ($)</label><input id="cost" type="number" min="0" max="100000000" step="1" inputmode="decimal" value="30"><p class="help">Materials, contractors, job-specific fees</p></div>
+<div><label for="fee">Platform/payment fee (%)</label><input id="fee" type="number" min="0" max="99" step="0.5" inputmode="decimal" value="5"><p class="help">Deducted from the selling price</p></div>
+<div><label for="goal">Extra profit target ($)</label><input id="goal" type="number" min="0" max="100000000" step="1" inputmode="decimal" value="100"><p class="help">After your time and direct costs</p></div>
+<div><label for="quote">Your proposed quote ($)</label><input id="quote" type="number" min="0" max="100000000" step="1" inputmode="decimal" value="600"><p class="help">Try the amount you'd actually charge</p></div>
+</div><button type="button" class="reset" id="reset">Reset example</button>
+</section>
+<section class="panel" aria-labelledby="result-title">
+<h2 id="result-title">Your estimate</h2><p class="sub">Updated as you edit. Currency is illustrative; use the same currency for every amount.</p>
+<div class="results" aria-live="polite" aria-atomic="true">
+<div class="metric primaryMetric"><span>Minimum quote to hit your target</span><strong id="minimum">$0.00</strong></div>
+<div class="metric"><span>Estimated profit after your time</span><strong id="net">$0.00</strong></div>
+<div class="metric"><span>Fee taken from your quote</span><strong id="fees">$0.00</strong></div>
+<div class="metric"><span>Value allocated to your time</span><strong id="labour">$0.00</strong></div>
+<div class="metric"><span>Effective earnings / hour before overhead</span><strong id="hourly">$0.00</strong></div>
+</div><p class="status" id="status" role="status">Checking your quote…</p>
+<p class="explain">Minimum quote = (hours × planning rate + direct expenses + target extra profit) ÷ (1 − fee rate). Your estimated profit also subtracts the planning value of your own hours; it is <strong>not</strong> accounting profit or take-home pay. Taxes and shared overhead aren't included.</p>
+<div class="cta">
+<h3>Want to track this across projects?</h3>
+<p>The A$19 <strong>Freelancer Profit &amp; Pricing Studio</strong> is an editable Excel workbook for pricing jobs and manually tracking project results. View actual worksheet previews before deciding.</p>
+<a class="action" href="https://znhn0w-z4.myshopify.com/products/freelancer-profit-pricing-studio-excel-template?utm_source=advera_calculator&utm_medium=owned&utm_campaign=freelance_quote_free_tool">See the Excel workbook →</a>
+<p style="margin:12px 0 0"><a href="https://znhn0w-z4.myshopify.com/pages/free-workbook-previews?utm_source=advera_calculator&utm_medium=owned&utm_campaign=freelance_quote_free_tool">View free real workbook previews</a></p>
+</div>
+</section>
+</div>
+<section class="reading"><h2>How to interpret the numbers</h2><p>A quote can appear profitable before you assign any value to your own time. This calculator shows whether the proposed price covers a planning allowance for the hours you work, direct job costs, and fees paid as a percentage of the sale. If the estimate falls below your target, consider adjusting scope, hours, price or the assumptions—not just cutting your earnings.</p><h2>What this calculator does not do</h2><p>It doesn't calculate tax, insurance, shared overhead, cashflow, superannuation or the true accounting profit of your business. It doesn't save client data, issue invoices, connect bank accounts or guarantee profitable work. Keep sensitive client details out of any online forms. The calculation runs locally on this page.</p><h2>Want a more detailed method?</h2><p>Read our free <a href="https://znhn0w-z4.myshopify.com/blogs/advera-guides/track-profit-by-client-project-in-excel?utm_source=advera_calculator&utm_medium=owned&utm_campaign=freelance_quote_free_tool">guide to tracking profit by client project</a>, including a worked example and the limitations of simplified project costing.</p></section>
+</main>
+<footer>© Advera Creative · Perth, Western Australia · <a href="/">Home</a> · <a href="/privacy.html">Privacy</a> · <a href="mailto:creativeadvera@gmail.com">Contact</a></footer>
+</div>
+<script>
+(function(){
+'use strict';
+const defaults={hours:8,rate:50,cost:30,fee:5,goal:100,quote:600};
+const format=new Intl.NumberFormat('en-AU',{style:'currency',currency:'AUD',maximumFractionDigits:2});
+const num=id=>{const el=document.getElementById(id);const x=Number(el.value);return Number.isFinite(x)?Math.max(0,x):0};
+const output=(id,value)=>document.getElementById(id).textContent=format.format(Number.isFinite(value)?value:0);
+function calculate(){
+const h=num('hours'), r=num('rate'), c=num('cost'), p=Math.min(num('fee'),99)/100, g=num('goal'), q=num('quote');
+const minimum=(h*r+c+g)/(1-p),fees=q*p, net=q-fees-c-h*r;
+const earned=h>0?(q-fees-c)/h:0;
+output('minimum',minimum);output('fees',fees);output('labour',h*r);output('net',net);output('hourly',earned);
+const status=document.getElementById('status');
+if(q>=minimum-0.005){status.textContent='At these assumptions, your quote meets your stated target.';status.className='status good';}
+else{status.textContent='At these assumptions, your quote falls short of your target by '+format.format(Math.max(0,minimum-q))+'.';status.className='status bad';}
+}
+Object.keys(defaults).forEach(id=>document.getElementById(id).addEventListener('input',calculate));
+document.getElementById('reset').addEventListener('click',()=>{Object.entries(defaults).forEach(([id,v])=>document.getElementById(id).value=v);calculate();});
+calculate();
+})();
+</script>
+</body>
+</html>
